@@ -5,7 +5,16 @@ TODO
 - [ ] project page
 - [ ] _example.nb.html
 
-## dane
+| Nazwa | Wartosć    |
+|-----------------------|------------|
+| Procesor | Core(TM) i3-4005U CPU 1,7 GHz 1,7 GHz |
+| RAM | 6 GB |
+| Dysk | SSD |
+| System operacyjny | Windows 8 64-bit |
+| Wersje użytych baz danych | |
+| Wersje bibliotek | |
+
+## Dane
 
 Przykładowy rekord. Ile danych? (w sztukach, w GB)
 
