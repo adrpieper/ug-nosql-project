@@ -1,0 +1,8 @@
+
+C:\UG\NoSQL>(echo Hello world   & echo czokolwiek  )  | java -cp app\target\classes Main 
+Hello world  copied
+czokolwiek  copied
+"Date/Time","Lat","Lon","Base"
+"4/1/2014 0:11:00",40.769,-73.9549,"B02512"
+"4/1/2014 0:17:00",40.7267,-74.0345,"B02512"
+"4/1/2014 0:21:00",40.7316,-73.9873,"B02512"
