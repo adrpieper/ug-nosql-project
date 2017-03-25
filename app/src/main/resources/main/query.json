@@ -1,0 +1,12 @@
+{
+  "query": {
+    "match": { "base": "B02512" },
+    "geo_distance" : {
+      "distance" : "12km",
+      "pin.location" : {
+        "lat" : 40,
+        "lon" : -70
+      }
+    }
+  }
+}

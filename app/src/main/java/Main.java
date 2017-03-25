@@ -8,18 +8,14 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner scanner = new Scanner(System.in);
-
-        while (scanner.hasNext()) {
-            String line = scanner.nextLine();
-            System.out.println(line + " copied");
-        }
-
         FileInputStream fileInputStream = new FileInputStream("uber-raw-data-apr14.csv");
-        scanner = new Scanner(fileInputStream);
-        System.out.println(scanner.nextLine());
-        System.out.println(scanner.nextLine());
-        System.out.println(scanner.nextLine());
-        System.out.println(scanner.nextLine());
+        Scanner scanner = new Scanner(fileInputStream);
+
+        long lines = 0;
+        while (scanner.hasNext()) {
+            lines++;
+            scanner.nextLine();
+        }
+        System.out.println(lines);
     }
 }

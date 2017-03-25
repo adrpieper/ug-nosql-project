@@ -8,6 +8,6 @@ import java.time.format.DateTimeFormatter;
 public class FormatterProvider {
 
     public static DateTimeFormatter provide(){
-        return DateTimeFormatter.ofPattern("d/M/yyyy H:mm:ss");
+        return DateTimeFormatter.ofPattern("M/d/yyyy H:mm:ss");
     }
 }
