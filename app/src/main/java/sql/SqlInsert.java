@@ -1,31 +1,32 @@
 package sql;
 
+import dto.UberPickDTO;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.List;
 
 /**
  * Created by Adrian on 2017-03-26.
  */
 public class SqlInsert {
 
-    public static void main(String[] args) {
-        Connection c = null;
+    private InsertGenerator insertGenerator = new InsertGenerator();
+
+    public void insert(List<UberPickDTO> picks) {
         try {
+            Connection c = null;
             Class.forName("org.postgresql.Driver");
             c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/uber",
-                            "postgres", "system");
+                    "postgres", "system");
             Statement statement = c.createStatement();
-            String sql = "INSERT INTO public.pick( data_time, longitude, latitude, base)" +
-                    "    VALUES ((TIMESTAMP '2011-05-16 15:36:38'), 4, 33.22, 'ssasa'), ((TIMESTAMP '2011-05-16 15:36:38'), 4, 23, 'sasass');";
-            statement.executeUpdate(sql);
-            statement.close();
-            c.close();
+            statement.executeUpdate(insertGenerator.generate(picks));
         } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println(e.getClass().getName()+": "+e.getMessage());
-            System.exit(0);
+            throw new RuntimeException(e);
         }
-        System.out.println("Opened database successfully");
+    }
+
+    public static void main(String[] args) {
     }
 }

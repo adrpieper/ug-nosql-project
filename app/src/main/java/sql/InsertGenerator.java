@@ -2,6 +2,8 @@ package sql;
 
 import dto.UberPickDTO;
 
+import java.util.Locale;
+
 
 /**
  * Created by Adrian on 2017-03-26.
@@ -17,7 +19,16 @@ public class InsertGenerator {
                 stringBuilder.append(',');
             }
             first = false;
-            stringBuilder.append(String.format("((TIMESTAMP '2011-05-16 15:36:38'), 4, 23, '%s')",dto.getBase()));
+            stringBuilder.append(
+                    String.format
+                            (Locale.US,
+                            "((TIMESTAMP '%s'), %f, %s, '%s')"
+                            ,dto.getDateTime().toString()
+                            ,dto.getLocation()[0]
+                            ,dto.getLocation()[1]
+                            ,dto.getBase()
+                    )
+            );
         }
         stringBuilder.append(';');
         return stringBuilder.toString();
