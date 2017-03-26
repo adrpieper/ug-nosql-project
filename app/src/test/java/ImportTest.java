@@ -10,6 +10,6 @@ public class ImportTest {
 
     @Test
     public void importSampleFile() {
-        importer.sendToDb(ImportTest.class.getResourceAsStream("sample.csv"), 10);
+        importer.sendToDb(ImportTest.class.getResourceAsStream("uber/sample.csv"), 10);
     }
 }
