@@ -1,15 +1,17 @@
 import org.junit.jupiter.api.Test;
-import uber.Importer;
+import uber.ElasticSearchImporter;
+import uber.TestData;
 
 /**
  * Created by Adrian on 2017-03-25.
  */
 public class ImportTest {
 
-    private Importer importer = new Importer();
+    private ElasticSearchImporter elasticSearchImporter = new ElasticSearchImporter();
 
     @Test
     public void importSampleFile() {
-        importer.sendToDb(ImportTest.class.getResourceAsStream("uber/sample.csv"), 10);
+        elasticSearchImporter.sendToDb(TestData.sample(), 10);
     }
+
 }

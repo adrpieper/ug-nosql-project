@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "pick": {
+      "properties": {
+        "dateTime": {
+          "type": "date"
+        },
+        "location": {
+          "type": "geo_point"
+        }
+      }
+    }
+  }
+}

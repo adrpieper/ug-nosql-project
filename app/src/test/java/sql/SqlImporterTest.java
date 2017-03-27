@@ -8,12 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Created by Adrian on 2017-03-26.
  */
-class SqlInsertTest {
+class SqlImporterTest {
 
-    private SqlInsert sqlInsert = new SqlInsert();
+    SqlImporter underTest = new SqlImporter();
+
     @Test
-    void insert() {
-        sqlInsert.insert(TestData.listDTO());
+    void importToDb() {
+        underTest.importToDb(TestData.sample(), 100);
     }
-
 }

@@ -4,6 +4,7 @@ import dto.UberPickDTO;
 import dto.geo.GeoMapper;
 import dto.geo.UberPickGeoDTO;
 
+import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -28,5 +29,9 @@ public class TestData {
 
     public static List<UberPickGeoDTO> listGeoDTO() {
         return Arrays.asList(testGeoDTO(), testGeoDTO(), testGeoDTO());
+    }
+
+    public static InputStream sample() {
+        return TestData.class.getResourceAsStream("sample.csv");
     }
 }

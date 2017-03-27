@@ -12,7 +12,7 @@ public class InsertGenerator {
 
     public String generate(Iterable<UberPickDTO> iterator) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("INSERT INTO public.pick( data_time, longitude, latitude, base) VALUES ");
+        stringBuilder.append("INSERT INTO public.pick( data_time, latitude, longitude, base) VALUES ");
         boolean first = true;
         for (UberPickDTO dto : iterator) {
             if (!first) {
