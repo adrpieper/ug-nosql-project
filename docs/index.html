@@ -1,5 +1,59 @@
 <h1>Projekt z NoSQL</h1>
-<p>TODO</p>
-<ul>
-  <li><a href="examle.html">Samochody</a></li>
-</ul>
+<h2>Adrian Pieper</h2>
+<h3>Dane</h3>
+Wybrane przeze mnie <a href="https://www.kaggle.com/fivethirtyeight/uber-pickups-in-new-york-city">dane</a> to informacje o usługach typu Uber świadczonych w Nowym Yorku.
+Dane zawierają 4.5 miliona wpisów z okresu od Kwietnia do Września 2014. Dane z każdego miesiąca znajdują się w osobym pliku.
+Każdy wiersz zawiera datę, współrzędne geograficzne (szerokość i wysokość) oraz numer licencji (TLC).
+<p>Dane mają format csv. Probkę danych można zobaczyć tutaj: <a href="https://adrpieper.github.io/ug-nosql-project/sample.scv">sample.csv</a> </p>
+
+<h3>Elastic Search<h3>
+<h3>Import</h3>
+<p>
+Przed dokonaniem importu należy dodać maping. Służy do tego skrypt addMapping.
+</p>
+CL: <pre class="bash"><code>addMapping</code></pre>
+<p>
+Aby umieścić dane w bazie konwertuje ją z formatu cvs na json, tak aby ich format był zgodne z Elastic Search Bulk API.
+Za import odpowiedzialny jest skrypt javaESImport. Na jego wejściu powinny pojawić się dane w formacie csv.
+</p>
+  Przykład 4 wiersze
+<pre class="json"><code>
+{ "create": { "_id": 1 } }
+{"dateTime":"2012-02-12T12:14:05","location":[10.2,20.3],"base":"B02512"}
+{ "create": { "_id": 2 } }
+{"dateTime":"2012-02-12T12:14:05","location":[10.2,20.3],"base":"B02512"}
+{ "create": { "_id": 3 } }
+{"dateTime":"2012-02-12T12:14:05","location":[10.2,20.3],"base":"B02512}
+</code></pre>
+CL: <pre class="bash"><code>type sample.csv | javaImport </code></pre>
+
+
+<h3>GeoJSON</h3>
+Poniższy skrypt generuje dane pobiera obiekty spełniające kryteria i konwerutuje je na format Geojson
+CL: <pre class="bash"><code>type sample.csv | javaToGeoFromES </code></pre>
+Polecenie używa poniższego zapytania
+<pre class="json"><code>
+{
+  "query": {
+    "bool" : {
+      "must" : {
+        "match_all" : {}
+      },
+      "filter" : {
+        "geo_bounding_box" : {
+          "location" : {
+            "top_left" : {
+              "lat" : 80,
+              "lon" : -74.1
+            },
+            "bottom_right" : {
+              "lat" : 20,
+              "lon" : -74
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
