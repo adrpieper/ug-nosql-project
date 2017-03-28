@@ -12,6 +12,24 @@ Każdy wiersz zawiera datę, współrzędne geograficzne (szerokość i wysokoś
 Przed dokonaniem importu należy dodać maping. Służy do tego skrypt addMapping.
 </p>
 CL: <pre class="bash"><code>addMapping</code></pre>
+
+Mapping
+<pre class="json"><code>
+{
+  "mappings": {
+    "pick": {
+      "properties": {
+        "dateTime": {
+          "type": "date"
+        },
+        "location": {
+          "type": "geo_point"
+        }
+      }
+    }
+  }
+}
+</code></pre>
 <p>
 Aby umieścić dane w bazie konwertuje ją z formatu cvs na json, tak aby ich format był zgodne z Elastic Search Bulk API.
 Za import odpowiedzialny jest skrypt javaESImport. Na jego wejściu powinny pojawić się dane w formacie csv.
@@ -29,27 +47,26 @@ CL: <pre class="bash"><code>type sample.csv | javaImport </code></pre>
 
 
 <h3>GeoJSON</h3>
-Poniższy skrypt generuje dane pobiera obiekty spełniające kryteria i konwerutuje je na format Geojson
+Poniższy skrypt pobiera dane spełniające kryteria i konwerutuje je na format Geojson.
 CL: <pre class="bash"><code>type sample.csv | javaToGeoFromES </code></pre>
 Polecenie używa poniższego zapytania
 <pre class="json"><code>
 {
+  "size" : 1000,
   "query": {
     "bool" : {
       "must" : {
         "match_all" : {}
       },
       "filter" : {
-        "geo_bounding_box" : {
+        "geo_polygon" : {
           "location" : {
-            "top_left" : {
-              "lat" : 80,
-              "lon" : -74.1
-            },
-            "bottom_right" : {
-              "lat" : 20,
-              "lon" : -74
-            }
+            "points" : [
+              [ -73.989587, 40.741552],
+              [ -73.995864, 40.744067],
+              [ -73.991524, 40.749692],
+              [ -73.985357, 40.747192]
+            ]
           }
         }
       }
@@ -57,3 +74,7 @@ Polecenie używa poniższego zapytania
   }
 }
 </code></pre>
+Poniższa mapka ukazuje podwózki ubera w obszarze obraniczonym ulicami: "W 23rd St", "W 32nd St", "7th Ave" i "5th Ave".
+<script src="https://embed.github.com/view/geojson/apieper/ug-nosql-project/master/docs/geo.geojson"></script>
+  
+  
