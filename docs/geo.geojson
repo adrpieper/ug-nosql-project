@@ -1,18 +1,19 @@
 {"features":[
-  {"geometry":{"coordinates":[-74.0159,40.7152],"type":"Point"},
-   "properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02512 2014-04-17T16:59"},"type":"Feature"},
-  {
+   {
   "type": "Feature",
          "geometry": {
            "type": "Polygon",
            "coordinates": [ [
-             [-74.183000,  40.643007], [-74.076061, 40.647495], [-74.051017, 40.602597] ]
+             
+              [ -73.989587, 40.741552],
+              [ -73.995864, 40.744067],
+              [ -73.991524, 40.749692],
+              [ -73.985357, 40.747192]
+             ]
              ]
          },
          "properties": {
            "prop0": "value0",
            "prop1": {"this": "that"}
            }
-  }
-  
-  ,{"geometry":{"coordinates":[-74.0,40.742],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02512 2014-04-24T15:32"},"type":"Feature"},{"geometry":{"coordinates":[-74.0163,40.7152],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02512 2014-04-24T21:48"},"type":"Feature"},{"geometry":{"coordinates":[-74.027,40.7505],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02512 2014-04-28T18:50"},"type":"Feature"},{"geometry":{"coordinates":[-74.0077,40.743],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02512 2014-04-29T19:58"},"type":"Feature"},{"geometry":{"coordinates":[-74.0047,40.7071],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-04T15:46"},"type":"Feature"},{"geometry":{"coordinates":[-74.0135,40.706],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-10T18:26"},"type":"Feature"},{"geometry":{"coordinates":[-74.0143,40.7029],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-11T19:43"},"type":"Feature"},{"geometry":{"coordinates":[-74.0301,40.7362],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-11T23:22"},"type":"Feature"},{"geometry":{"coordinates":[-74.0164,40.7068],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-16T19:37"},"type":"Feature"}],"type":"FeatureCollection"}
+  },{"geometry":{"coordinates":[-73.9907,40.7453],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-18T15:17"},"type":"Feature"},{"geometry":{"coordinates":[-73.9919,40.7491],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02682 2014-04-25T20:00"},"type":"Feature"},{"geometry":{"coordinates":[-73.992,40.7451],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-26T23:40"},"type":"Feature"},{"geometry":{"coordinates":[-73.9932,40.7457],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-30T16:20"},"type":"Feature"},{"geometry":{"coordinates":[-73.9902,40.7427],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02617 2014-04-28T15:55"},"type":"Feature"},{"geometry":{"coordinates":[-73.9888,40.7484],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02682 2014-04-15T06:32"},"type":"Feature"},{"geometry":{"coordinates":[-73.9923,40.7476],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02617 2014-04-23T11:56"},"type":"Feature"},{"geometry":{"coordinates":[-73.9894,40.747],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02682 2014-04-22T15:08"},"type":"Feature"},{"geometry":{"coordinates":[-73.9882,40.7459],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02682 2014-04-26T08:31"},"type":"Feature"},{"geometry":{"coordinates":[-73.9892,40.7432],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-16T12:27"},"type":"Feature"},{"geometry":{"coordinates":[-73.9888,40.7452],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-27T17:51"},"type":"Feature"},{"geometry":{"coordinates":[-73.9891,40.7435],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02682 2014-04-02T15:42"},"type":"Feature"},{"geometry":{"coordinates":[-73.9889,40.7453],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02682 2014-04-23T06:10"},"type":"Feature"},{"geometry":{"coordinates":[-73.9888,40.7429],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-05T18:09"},"type":"Feature"},{"geometry":{"coordinates":[-73.9915,40.7447],"type":"Point"},"properties":{"marker-size":"medium","marker-symbol":"airport","title":"B02598 2014-04-18T17:46"},"type":"Feature"}],"type":"FeatureCollection"}
