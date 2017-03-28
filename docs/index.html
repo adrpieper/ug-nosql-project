@@ -28,3 +28,32 @@ Za import odpowiedzialny jest skrypt javaESImport. Na jego wejściu powinny poja
 CL: <pre class="bash"><code>type sample.csv | javaImport </code></pre>
 
 
+<h3>GeoJSON</h3>
+Poniższy skrypt generuje dane pobiera obiekty spełniające kryteria i konwerutuje je na format Geojson
+CL: <pre class="bash"><code>type sample.csv | javaToGeoFromES </code></pre>
+Polecenie używa poniższego zapytania
+<pre class="json"><code>
+{
+  "query": {
+    "bool" : {
+      "must" : {
+        "match_all" : {}
+      },
+      "filter" : {
+        "geo_bounding_box" : {
+          "location" : {
+            "top_left" : {
+              "lat" : 80,
+              "lon" : -74.1
+            },
+            "bottom_right" : {
+              "lat" : 20,
+              "lon" : -74
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
