@@ -1,9 +1,8 @@
-# ug-nosql-project
-Projekt z NoSQL
+# NoSql
+[Zadanie 1](https://adrpieper.github.io/ug-nosql-project/)
 
 TODO
-- [ ] project page
-- [ ] _example.nb.html
+- [ ] Zadanie Geo
 
 | Nazwa | Wartosć    |
 |-----------------------|------------|
