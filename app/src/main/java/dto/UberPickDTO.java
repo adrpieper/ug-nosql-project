@@ -1,5 +1,6 @@
 package dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -45,11 +46,24 @@ public class UberPickDTO {
         return base;
     }
 
+
+
+    @JsonIgnore
+    public float getLongitude() {
+        return location[0];
+    }
+
+    @JsonIgnore
+    public float getLatitude() {
+        return location[1];
+    }
+
     @Override
     public String toString() {
         return "UberPickDTO{" +
                 "dateTime=" + dateTime +
-                ", location=" + Arrays.toString(location) +
+                ", longitude=" + getLongitude() +
+                ", latitude=" + getLatitude() +
                 ", base='" + base + '\'' +
                 '}';
     }

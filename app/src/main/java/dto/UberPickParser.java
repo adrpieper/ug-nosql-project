@@ -16,7 +16,7 @@ public class UberPickParser {
         String[] split = line.replace("\"","").split(",");
         LocalDateTime dateTime = LocalDateTime.parse(split[0], formatter);
         float latitude = Float.parseFloat(split[1]);
-        float  longitude = Float.parseFloat(split[2]);
+        float longitude = Float.parseFloat(split[2]);
         String base = split[3];
         return new UberPickDTO(dateTime, longitude, latitude, base);
     }

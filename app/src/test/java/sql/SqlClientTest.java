@@ -1,5 +1,6 @@
 package sql;
 
+import dto.UberPickDTO;
 import org.junit.jupiter.api.Test;
 import uber.TestData;
 
@@ -19,5 +20,15 @@ class SqlClientTest {
     void clear() {
         sqlClient.clear();
     }
+
+    @Test
+    void select()
+    {
+        for (UberPickDTO uberPickDTO : sqlClient.select("SELECT * from pick")) {
+            System.out.println(uberPickDTO);
+        }
+        ;
+    }
+
 
 }

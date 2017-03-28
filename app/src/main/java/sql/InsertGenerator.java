@@ -22,10 +22,10 @@ public class InsertGenerator {
             stringBuilder.append(
                     String.format
                             (Locale.US,
-                            "((TIMESTAMP '%s'), %f, %s, '%s')"
+                            "((TIMESTAMP '%s'), %f, %f, '%s')"
                             ,dto.getDateTime().toString()
-                            ,dto.getLocation()[0]
-                            ,dto.getLocation()[1]
+                            ,dto.getLatitude()
+                            ,dto.getLongitude()
                             ,dto.getBase()
                     )
             );

@@ -1,20 +1,19 @@
 {
+  "size" : 1000,
   "query": {
     "bool" : {
       "must" : {
         "match_all" : {}
       },
       "filter" : {
-        "geo_bounding_box" : {
+        "geo_polygon" : {
           "location" : {
-            "top_left" : {
-              "lat" : 80,
-              "lon" : -74.1
-            },
-            "bottom_right" : {
-              "lat" : 20,
-              "lon" : -74
-            }
+            "points" : [
+              [ -73.989587, 40.741552],
+              [ -73.995864, 40.744067],
+              [ -73.991524, 40.749692],
+              [ -73.985357, 40.747192]
+            ]
           }
         }
       }

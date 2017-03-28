@@ -15,12 +15,16 @@ import java.util.List;
 public class TestData {
 
     public static UberPickDTO testDTO() {
-        LocalDateTime dateTime = LocalDateTime.of(2012, 2, 12, 12, 14, 5);
+        return testDTO(12);
+    }
+
+    public static UberPickDTO testDTO(int hour) {
+        LocalDateTime dateTime = LocalDateTime.of(2012, 2, 12, hour, 14, 5);
         return new UberPickDTO(dateTime, 10.2f, 20.3f, "B02512");
     }
 
     public static List<UberPickDTO> listDTO() {
-        return Arrays.asList(testDTO(), testDTO(), testDTO());
+        return Arrays.asList(testDTO(1), testDTO(12), testDTO(16));
     }
 
     public static UberPickGeoDTO testGeoDTO() {

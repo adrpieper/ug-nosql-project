@@ -10,4 +10,8 @@ public class FormatterProvider {
     public static DateTimeFormatter provide(){
         return DateTimeFormatter.ofPattern("M/d/yyyy H:mm:ss");
     }
+    public static DateTimeFormatter provideSQL(){
+        return DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    }
+
 }
