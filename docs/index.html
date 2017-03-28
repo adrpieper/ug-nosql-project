@@ -78,6 +78,27 @@ Polecenie używa poniższego zapytania
 Poniższa mapka ukazuje podwózki ubera w obszarze obraniczonym ulicami: "W 23rd St", "W 32nd St", "7th Ave" i "5th Ave".
 <script src="https://embed.github.com/view/geojson/adrpieper/ug-nosql-project/master/docs/geo.geojson"></script>
   
-<h3>Elastic Search<h3>
+<h3>PostgresSQL<h3>
+<h3>Schema</h3>
+  Baza danych zawiera jedną tablelę składającą się z 4 kolumn.
+  <ul>
+    <li>id - klucz główny</li>
+    <li>latitude - szerokość geograficzna</li>
+    <li>longitude - długość geograficzna</li>
+    <li>base - kod licencji (TLC)</li>
+  </ul>
+ 
 <h3>Import</h3>
+Aby zaimportować dane do bazy Postgres trzeba wygenerować i wykonać odpowiednie polecenie typu INSERT
+Służy do tego skrypt javaSqlImport, ktory oczekuje na weściu danych w formacie csv.
+Dane pakowane są w paczki po 100 wierszy.
+CL: <pre class="bash"><code>type sample.csv | javaSqlImport </code></pre>
+Przykład kodu SQL
+<pre class="sql"><code>
+  INSERT INTO public.pick( data_time, latitude, longitude, base) VALUES 
+  ((TIMESTAMP '2012-02-12T12:14:05'), 10.200000, 20.3, 'B02512'),
+  ((TIMESTAMP '2012-02-12T12:14:05'), 10.200000, 20.3, 'B02512'),
+  ((TIMESTAMP '2012-02-12T12:14:05'), 10.200000, 20.3, 'B02512');
+</code></pre>
+  
   
