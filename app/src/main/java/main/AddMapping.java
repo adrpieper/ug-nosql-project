@@ -12,7 +12,7 @@ import java.io.InputStream;
 /**
  * Created by Adrian on 2017-03-25.
  */
-public class PutSchema {
+public class AddMapping {
 
     public static void main(String[] args) throws IOException {
         ElasticSearchHttpClient client = new ElasticSearchHttpClient();
@@ -26,7 +26,7 @@ public class PutSchema {
 
     public static String fromFile(String fileName) {
          try {
-             InputStream inputStream = PutSchema.class.getResourceAsStream(fileName);
+             InputStream inputStream = AddMapping.class.getResourceAsStream(fileName);
              ObjectMapper objectMapper = new ObjectMapper();
              JsonNode jsonNode = objectMapper.readTree(inputStream);
             return objectMapper.writeValueAsString(jsonNode);

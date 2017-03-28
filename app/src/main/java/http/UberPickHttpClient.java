@@ -6,6 +6,7 @@ import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import dto.UberPickDTO;
 
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -50,11 +51,11 @@ public class UberPickHttpClient {
         id+= uberPickDto.size();
     }
 
-    public String get(String query) {
+    public InputStream get(String query) {
 
         ClientResponse response;
 
-        response = elasticSearchHttpClient.resource(path + "/_search")
+        response = elasticSearchHttpClient.resource("/uber/_search")
                 .entity(query)
                 .post(ClientResponse.class);
 
@@ -62,6 +63,7 @@ public class UberPickHttpClient {
             throw new RuntimeException("Failed : HTTP error code : "
                     + response.getStatus());
         }*/
-        return response.getEntity(String.class);
+
+        return response.getEntityInputStream();
     }
 }

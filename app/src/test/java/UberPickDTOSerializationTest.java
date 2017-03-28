@@ -4,6 +4,8 @@ import dto.UberPickDTO;
 import org.junit.jupiter.api.Test;
 import uber.TestData;
 
+import java.io.IOException;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -11,15 +13,22 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class UberPickDTOSerializationTest {
 
-    private final String EXPECTED_JSON = "{\"dateTime\":\"2012-02-12T12:14:05\",\"latitude\":10.2,\"longitude\":20.3,\"base\":\"B02512\"}";
+    private final String JSON = "{\"dateTime\":\"2012-02-12T12:14:05\",\"location\":[10.2,20.3],\"base\":\"B02512\"}";
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Test
-    public void convert() throws JsonProcessingException {
-        UberPickDTO uberPickDto = TestData.testDTO();
-        ObjectMapper objectMapper = new ObjectMapper();
+    public void toJSON() throws JsonProcessingException {
+        String result = objectMapper.writeValueAsString(TestData.testDTO());
 
-        String result = objectMapper.writeValueAsString(uberPickDto);
+        assertThat(result).isEqualTo(JSON);
+    }
 
-        assertThat(result).isEqualTo(EXPECTED_JSON);
+    @Test
+    public void toDTO() throws IOException {
+        UberPickDTO EXPECTED_DTO = TestData.testDTO();
+
+        UberPickDTO result = objectMapper.readValue(JSON, UberPickDTO.class);
+
+        assertThat(result).isEqualsToByComparingFields(EXPECTED_DTO);
     }
 }

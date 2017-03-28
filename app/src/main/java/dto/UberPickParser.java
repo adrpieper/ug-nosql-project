@@ -18,6 +18,6 @@ public class UberPickParser {
         float latitude = Float.parseFloat(split[1]);
         float  longitude = Float.parseFloat(split[2]);
         String base = split[3];
-        return new UberPickDTO(dateTime, latitude, longitude, base);
+        return new UberPickDTO(dateTime, longitude, latitude, base);
     }
 }

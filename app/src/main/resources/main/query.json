@@ -1,11 +1,22 @@
 {
   "query": {
-    "match": { "base": "B02512" },
-    "geo_distance" : {
-      "distance" : "12km",
-      "pin.location" : {
-        "lat" : 40,
-        "lon" : -70
+    "bool" : {
+      "must" : {
+        "match_all" : {}
+      },
+      "filter" : {
+        "geo_bounding_box" : {
+          "location" : {
+            "top_left" : {
+              "lat" : 80,
+              "lon" : -74.1
+            },
+            "bottom_right" : {
+              "lat" : 20,
+              "lon" : -74
+            }
+          }
+        }
       }
     }
   }
