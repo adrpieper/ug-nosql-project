@@ -31,8 +31,8 @@ Mapping
 }
 </code></pre>
 <p>
-Aby umieścić dane w bazie konwertuje ją z formatu cvs na json, tak aby ich format był zgodne z Elastic Search Bulk API.
-Za import odpowiedzialny jest skrypt javaESImport. Na jego wejściu powinny pojawić się dane w formacie csv.
+Aby umieścić dane w bazie konwertuje ją z formatu cvs na json, tak aby ich format był zgodne z Elastic Search Bulk API. 
+Dane są ładowane w paczkach po 100 elementów.
 </p>
   Przykład 4 wiersze
 <pre class="json"><code>
@@ -43,6 +43,7 @@ Za import odpowiedzialny jest skrypt javaESImport. Na jego wejściu powinny poja
 { "create": { "_id": 3 } }
 {"dateTime":"2012-02-12T12:14:05","location":[10.2,20.3],"base":"B02512}
 </code></pre>
+Za import odpowiedzialny jest skrypt javaESImport. Na jego wejściu powinny pojawić się dane w formacie csv.
 CL: <pre class="bash"><code>type sample.csv | javaImport </code></pre>
 
 
@@ -76,6 +77,7 @@ Polecenie używa poniższego zapytania
 </code></pre>
 Poniższa mapka ukazuje podwózki ubera w obszarze obraniczonym ulicami: "W 23rd St", "W 32nd St", "7th Ave" i "5th Ave".
 <script src="https://embed.github.com/view/geojson/adrpieper/ug-nosql-project/master/docs/geo.geojson"></script>
-<script src="https://embed.github.com/view/geojson/abie115/nosql/master/maps/elasticsearch/mapka1_es.geojson"></script>
   
+<h3>Elastic Search<h3>
+<h3>Import</h3>
   
